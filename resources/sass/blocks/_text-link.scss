@@ -1,0 +1,13 @@
+.text-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  max-width: max-content;
+  transition-property: color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: $primary;
+  }
+}

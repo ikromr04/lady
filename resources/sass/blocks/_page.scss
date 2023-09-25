@@ -1,0 +1,32 @@
+.page {
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $font-color;
+  font-family: "Yandex Sans Text", "Arial", sans-serif;
+}
+
+.page__body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  overflow-x: hidden;
+  margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $primary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+  }
+
+  &--menu-shown {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,48 @@
+.products-content__top {
+  display: grid;
+  gap: 32px;
+
+  .wysiwyg,
+  .simditor {
+    max-width: max-content;
+    min-width: 120px;
+  }
+
+  @include desktop {
+    gap: 48px;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.products-content__attention {
+  padding: 24px;
+  border-radius: 8px;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  &::before {
+    content: "!";
+    width: 64px;
+    height: 64px;
+    aspect-ratio: 1/1;
+    border: 5px solid $basic-white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $basic-white;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .wysiwyg * {
+    color: $basic-white;
+  }
+
+  @include tablet {
+    padding: 24px 64px;
+  }
+}

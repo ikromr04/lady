@@ -1,0 +1,47 @@
+.wysiwyg {
+  position: relative;
+  color: $font-color;
+  width: 100%;
+  min-height: 24px;
+
+  h1,
+  h2 {
+    line-height: 28px;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: $title-color;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 0;
+    display: inline;
+
+    &:has(br) {
+      display: block;
+    }
+
+    &:empty {
+      display: block;
+      height: 21px;
+    }
+
+    *:empty {
+      display: block;
+      height: 21px;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.products-selected__container {
+  @include desktop {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.products-selected__top {
+  margin-bottom: 32px;
+
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  img {
+    margin-bottom: 24px;
+    width: 100%;
+    height: auto;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    a {
+      background-color: #F5F5F5;
+      width: 100%;
+    }
+  }
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 32px;
+
+    p {
+      display: none;
+    }
+
+    div {
+      &::before {
+        content: attr(prescription) ' препарат';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  @include desktop {
+    display: block;
+    max-width: 340px;
+
+    p {
+      display: block;
+    }
+
+    div::before {
+      display: none;
+    }
+  }
+
+  @include fullhd {
+    max-width: 430px;
+  }
+}
+
+.products-selected__wysiwyg {
+  max-width: 1035px;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    padding-bottom: 8px;
+    border-bottom: 4px solid $primary;
+  }
+}

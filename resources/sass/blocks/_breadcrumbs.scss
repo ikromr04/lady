@@ -1,0 +1,29 @@
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  max-width: 90vw;
+  overflow-y: hidden;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs__link {
+  display: flex;
+  min-width: max-content;
+
+  &--current {
+    color: $primary;
+  }
+}
+
+.breadcrumbs__icon {
+  margin: 0 8px;
+}

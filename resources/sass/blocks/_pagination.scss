@@ -1,0 +1,82 @@
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  counter-reset: page -2;
+}
+
+.pagination__item {
+  counter-increment: page;
+
+  &:last-child {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      width: 56px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: $primary;
+      pointer-events: none;
+    }
+  }
+
+  &:last-child.pagination__item--current::after {
+    content: counter(page);
+    order: -1;
+    margin-right: 8px;
+    display: flex;
+  }
+}
+
+.pagination__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+
+  &:not(.pagination__link--previous, .pagination__link--next, .pagination__link--current) {
+    display: none;
+  }
+
+  * {
+    pointer-events: none;
+  }
+
+  &--previous,
+  &--next,
+  &--disabled {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: $primary;
+    color: $basic-white;
+  }
+
+  &--previous {
+    margin-right: 16px;
+    transform: rotate(180deg);
+  }
+
+  &--next {
+    margin-right: 32px;
+  }
+
+  &--disabled {
+    border: 2px solid $primary;
+    color: $primary;
+    background-color: $basic-white;
+    pointer-events: none;
+  }
+
+  &--current {
+    pointer-events: none;
+  }
+
+  .pagination__item:last-child & {
+    display: flex;
+  }
+}

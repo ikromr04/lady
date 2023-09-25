@@ -1,0 +1,15 @@
+.main-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+}
+
+.main-navigation__main-logo {
+  @include tablet {
+    margin-right: 48px;
+  }
+}

@@ -1,0 +1,14 @@
+.main-logo {
+  display: flex;
+  width: max-content;
+}
+
+.main-logo__image {
+  width: 96px;
+  height: 36px;
+
+  @include tablet {
+    width: 128px;
+    height: auto;
+  }
+}

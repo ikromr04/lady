@@ -1,0 +1,49 @@
+.career-content__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.career-content__steps {
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 24px;
+    counter-reset: steps;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include fullhd {
+      gap: 64px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      counter-increment: steps;
+
+      &::before {
+        content: counter(steps);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary;
+        color: $basic-white;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        aspect-ratio: 1/1;
+        font-size: 28px;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.info-section {
+  background-color: darken($basic-white, 8);
+  background-image: url("/images/info-section-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include tablet {
+    background-image: url("/images/info-section-tablet.jpg");
+  }
+
+  @include desktop {
+    background-image: url("/images/info-section-desktop.jpg");
+  }
+
+  @include fullhd {
+    background-image: url("/images/info-section-fullhd.jpg");
+  }
+}
+
+.info-section__container {
+  padding-top: 120px;
+  padding-right: 2.5vw;
+  padding-bottom: 40px;
+  padding-left: 2.5vw;
+  display: flex;
+
+  @include tablet {
+    padding-top: 78px;
+    padding-right: calc(108px - 5vw);
+    padding-bottom: 78px;
+    justify-content: flex-end;
+  }
+
+  @include desktop {
+    padding-top: 98px;
+    padding-right: calc(210px - 5vw);
+    padding-bottom: 168px;
+  }
+
+  @include fullhd {
+    padding-top: 124px;
+    padding-right: 100px;
+    padding-bottom: 124px;
+  }
+}
+
+.info-section__wysiwyg {
+  font-size: 16px;
+
+  h1,
+  h2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    color: $title-color;
+
+    &::first-line {
+      font-size: 46px;
+      font-weight: 700;
+    }
+  }
+
+  a {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: $basic-white;
+    color: #141414;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 14px 32px;
+    min-height: 48px;
+    width: max-content;
+    transition: .3s;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      aspect-ratio: 1/1;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9 18 6-6-6-6' stroke='%23141414' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    &:hover {
+      background-color: $primary;
+      color: $basic-white;
+      box-shadow: 0px 16px 42px rgba(8, 133, 162, 0.5);
+    }
+
+    &:hover::after {
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9 18 6-6-6-6' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+  }
+
+  @include tablet {
+    width: 320px;
+
+    h1,
+    h2 {
+      font-size: 40px;
+
+      &::first-line {
+        font-size: 56px;
+      }
+    }
+  }
+
+  @include fullhd {
+    width: 480px;
+    font-size: 24px;
+
+    h1,
+    h2 {
+      font-size: 60px;
+
+      &::first-line {
+        font-size: 84px;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.foundation-section__wysiwyg {
+  margin-bottom: 24px;
+
+  @include desktop {
+    margin-bottom: 32px;
+  }
+}

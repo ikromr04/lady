@@ -1,0 +1,32 @@
+.products-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include fullhd {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.products-list__item {
+  display: flex;
+}
+
+.products-list__pagination {
+  margin-top: 32px;
+
+  &:empty {
+    margin-top: 0;
+  }
+}

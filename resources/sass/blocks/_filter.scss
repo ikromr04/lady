@@ -1,0 +1,194 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  gap: 8px;
+
+  @include tablet {
+    gap: 24px;
+  }
+}
+
+.filter__form {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+  min-height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    width: auto;
+    flex-grow: 1;
+    max-width: 880px;
+  }
+}
+
+.filter__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  margin-left: 24px;
+}
+
+.filter__input {
+  flex-grow: 1;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-right: 24px;
+  min-width: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.filter__wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.filter__reset {
+  display: flex;
+  padding: 0;
+  border: none;
+  background-color: $primary;
+  color: $basic-white;
+  height: 100%;
+  align-items: center;
+  padding: 8px 16px;
+
+  &>svg:last-child {
+    display: none;
+  }
+
+  .filter__form.shown .filter__wrapper & {
+    &>svg:first-child {
+      display: none;
+    }
+
+    &>svg:last-child {
+      display: inline;
+    }
+  }
+}
+
+.filter__tags {
+  display: none;
+  visibility: hidden;
+
+  @include tablet {
+    display: flex;
+    visibility: visible;
+    align-items: center;
+    gap: 16px;
+    color: #B6B6B6;
+    font-size: 14px;
+    position: absolute;
+    right: calc(100% + 24px);
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: max-content;
+    color: #B6B6B6;
+    z-index: 1;
+  }
+
+  .filter__input:not(:placeholder-shown)+.filter__wrapper & {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.filter__tag {
+  cursor: pointer;
+  border-bottom: 1px solid #B6B6B6;
+
+  input:checked+& {
+    color: $primary;
+    border-bottom: 1px solid $primary;
+  }
+}
+
+.filter__prescription,
+.filter__category {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 48px;
+
+  @include tablet {
+    max-width: 240px;
+  }
+
+  @include fullhd {
+    max-width: 280px;
+  }
+}
+
+.filter__prescription {
+  z-index: 2;
+}
+
+.filter__prescription-button,
+.filter__category-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background-color: #F5F5F5;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  padding: 8px 32px;
+
+  * {
+    pointer-events: none;
+  }
+
+  svg {
+    color: $primary;
+
+    .shown & {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.filter__prescription-list,
+.filter__category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  border-radius: 0 0 8px 8px;
+  max-height: 400px;
+  overflow-y: scroll;
+  display: none;
+
+  .shown & {
+    display: flex;
+  }
+}
+
+.filter__prescription-item,
+.filter__category-item {
+  padding: 4px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}

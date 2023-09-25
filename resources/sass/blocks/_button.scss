@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  min-height: 48px;
+  padding: 0 32px;
+  border-radius: 8px;
+  color: #141414;
+  font-size: 16px;
+  background-color: $basic-white;
+  transition-property: box-shadow, background-color, color;
+  transition-duration: .3s;
+
+  &:hover {
+    background-color: $primary;
+    color: $basic-white;
+    box-shadow: 0px 16px 42px rgba(8, 133, 162, 0.5);
+  }
+}

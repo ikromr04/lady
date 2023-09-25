@@ -1,0 +1,25 @@
+.menu-button {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.menu-button__close-icon {
+  display: none;
+
+  .page__body--menu-shown & {
+    display: block;
+  }
+}
+
+.menu-button__open-icon {
+  .page__body--menu-shown & {
+    display: none;
+  }
+}

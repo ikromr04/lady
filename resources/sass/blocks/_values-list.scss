@@ -1,0 +1,30 @@
+.values-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @include fullhd {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.values-list__item {
+  background: #F1F3F4;
+  border-radius: 8px;
+  padding: 24px;
+
+  @include tablet {
+    padding: 32px 24px;
+  }
+
+  @include desktop {
+    padding: 32px;
+  }
+}
