@@ -28,14 +28,14 @@
 
       <ul class="social-list">
         <li class="social-list__item">
-          <a class="social-list__link" title="Фейсбук">
+          <a class="social-list__link" href="https://www.facebook.com/ladyhealthcare.tj" target="_blank" title="Фейсбук">
             <svg width="24" height="24">
               <use xlink:href="#facebook" />
             </svg>
           </a>
         </li>
         <li class="social-list__item">
-          <a class="social-list__link" title="Инстаграм">
+          <a class="social-list__link" href="https://www.instagram.com/ladyhealthcare_tajikistan" target="_blank" title="Инстаграм">
             <svg width="24" height="24">
               <use xlink:href="#instagram" />
             </svg>
