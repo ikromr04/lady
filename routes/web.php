@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'home'])->name('page.home');
+Route::post('/ae', [PageController::class, 'ae'])->name('ae');
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/career', [PageController::class, 'career'])->name('page.career');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
